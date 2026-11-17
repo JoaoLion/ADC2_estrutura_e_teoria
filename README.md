@@ -10,14 +10,9 @@ Site estático do Projeto Integrador do 4º semestre de Engenharia de Computaç�
 1. Baixe ou extraia os arquivos.
 2. Mantenha `index.html` e `style.css` na mesma pasta.
 3. Abra `index.html` em um navegador.
+4. Ou acesse https://joaolion.github.io/ADC2_estrutura_e_teoria/
 
-## Publicação no GitHub Pages
-1. Envie os dois arquivos para a raiz do repositório.
-2. Acesse **Settings > Pages**.
-3. Em Build and deployment, selecione a branch principal e a pasta `/ (root)`.
-4. Salve e aguarde a publicação.
 
 ## Conteúdo
 O site apresenta a visão geral do sistema para organização e controle do acervo da biblioteca do Tiro de Guerra, os cinco integrantes constantes na documentação oficial, tecnologias e a integração com as disciplinas **Estrutura de Dados** e **Teoria da Computação**.
 
-Os exemplos de AFD e expressão regular estão identificados como conceituais. Não devem ser interpretados como funcionalidades implementadas no código do sistema.
