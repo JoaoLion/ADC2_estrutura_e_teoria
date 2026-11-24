@@ -10,9 +10,8 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif}
-header{position:sticky;top:0;z-index:10;background:rgba(16,39,28,.96);backdrop-filter:blur(12px);color:#fff;padding:0 max(22px,calc((100% - var(--max))/2));box-shadow:0 5px 22px #10271c18}
-.brand{font-weight:800;letter-spacing:.08em;font-size:.82rem}
-header{display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:20px}
+header{position:sticky;top:0;z-index:10;background:rgba(16,39,28,.96);backdrop-filter:blur(12px);color:#fff;padding:0 max(22px,calc((100% - var(--max))/2));box-shadow:0 5px 22px #10271c18;display:flex;align-items:center;justify-content:space-between;min-height:68px;gap:20px}
+.brand{font-weight:800;letter-spacing:.08em;font-size:.82rem;white-space:nowrap}
 nav{display:flex;gap:22px;flex-wrap:wrap}
 nav a{color:#dce9e0;text-decoration:none;font-size:.88rem;font-weight:600;transition:color .2s}
 nav a:hover{color:#fff}
@@ -21,16 +20,16 @@ nav a:hover{color:#fff}
 .hero-inner{max-width:var(--max);margin:auto;position:relative;z-index:1}
 .eyebrow,.section-kicker{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.16em;color:#a9cbb3}
 .hero h1{font-size:clamp(2.4rem,5.4vw,4.8rem);line-height:1.04;letter-spacing:-.045em;max-width:850px;margin:18px 0}
-.hero p{font-size:1.12rem;color:#e0ebe3;max-width:690px;margin:0}
+.hero p{font-size:1.12rem;color:#e0ebe3;max-width:720px;margin:0}
 .meta{margin-top:28px;color:#c3d7c9;font-size:.88rem;font-weight:600}
 main{max-width:var(--max);margin:0 auto;padding:24px 24px 76px}
 section{padding:62px 0;border-bottom:1px solid var(--line);scroll-margin-top:82px}
 .section-kicker{color:var(--green)}
 h2{font-size:clamp(1.9rem,3.4vw,2.8rem);line-height:1.12;letter-spacing:-.035em;margin:8px 0 20px}
-h3{font-size:1.22rem;line-height:1.3;margin:26px 0 8px;color:#214631}
+h3{font-size:1.22rem;line-height:1.3;margin:30px 0 8px;color:#214631}
 h4{margin:0 0 8px;font-size:1rem;color:#214631}
 p{margin:0 0 14px;color:#46554d}
-.lead{font-size:1.12rem;line-height:1.7;color:#34463b;max-width:920px}
+.lead{font-size:1.12rem;line-height:1.7;color:#34463b;max-width:960px}
 .callout{background:linear-gradient(120deg,#e4efe7,#f0f5f1);border:1px solid #d4e4d8;border-left:4px solid var(--green);padding:19px 22px;margin:24px 0;border-radius:12px}
 .callout p{margin:0;color:#294334}
 .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:22px 0}
@@ -44,16 +43,10 @@ p{margin:0 0 14px;color:#46554d}
 .note,.note-disciplina{font-size:.88rem;color:var(--muted)}
 footer{background:var(--deep);color:#dce8e1;padding:30px 24px;text-align:center}
 footer p{color:#c5d5cc;margin:4px}
+#estruturas h3:before,#teoria h3:before{content:"";display:inline-block;width:7px;height:23px;border-radius:8px;background:var(--gold);margin-right:10px;vertical-align:middle}
+section p{max-width:960px}
 @media(max-width:760px){header{position:relative;display:block;padding:16px 20px}nav{margin-top:12px;gap:12px}.hero{padding:68px 22px}.hero:after{font-size:3rem}main{padding-left:20px;padding-right:20px}section{padding:44px 0}.grid{grid-template-columns:1fr}.team{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:430px){.team{grid-template-columns:1fr}.hero h1{font-size:2.5rem}}
-</style>
-
-<style>
-/* refinamentos de leitura das subseções acadêmicas */
-#estruturas h3,#teoria h3{display:flex;align-items:center;gap:10px;margin-top:30px}
-#estruturas h3:before,#teoria h3:before{content:"";display:inline-block;width:7px;height:23px;border-radius:8px;background:var(--gold);flex:none}
-#estruturas .callout,#teoria .callout{box-shadow:0 8px 24px #173d2809}
-section p{max-width:960px}
 </style>
 </head>
 <body>
@@ -66,26 +59,28 @@ section p{max-width:960px}
     <a href="#consideracoes">Considerações finais</a>
   </nav>
 </header>
+
 <div class="hero">
   <div class="hero-inner">
     <div class="eyebrow">Engenharia de Computação · 4º semestre</div>
     <h1>Organização e controle do acervo da biblioteca do Tiro de Guerra</h1>
-    <p>Uma solução computacional para substituir registros manuais por uma gestão digital, centralizada e rastreável de livros, usuários e empréstimos.</p>
+    <p>Uma solução computacional para centralizar o cadastro de obras e organizar as operações de empréstimo e devolução da biblioteca.</p>
     <div class="meta">Campus Maria Auxiliadora · 2026</div>
   </div>
 </div>
+
 <main>
 <section id="introducao">
   <div class="section-kicker">01 · Contexto e solução</div>
   <h2>Introdução</h2>
-  <p class="lead">O Projeto Integrador consiste no desenvolvimento de um sistema desktop para organização e controle do acervo da biblioteca do Tiro de Guerra. A proposta surgiu de uma necessidade identificada junto aos responsáveis pela instituição: os registros de empréstimos e devoluções eram realizados manualmente, por meio de anotações físicas, o que dificultava o acompanhamento dos materiais e aumentava a possibilidade de inconsistências e perda de informações.</p>
-  <p>A biblioteca reúne obras utilizadas como apoio à formação e aos estudos dos integrantes do Tiro de Guerra. Nesse contexto, localizar um livro, identificar sua disponibilidade e saber com quem está emprestado são atividades que precisam de informações confiáveis e atualizadas. A ausência de um sistema centralizado tornava essas tarefas mais demoradas e dependentes da conferência de registros manuais.</p>
-  <p>Para responder a esse problema, o grupo propôs uma aplicação que concentra os dados do acervo e as operações de circulação em um único ambiente. O sistema foi desenvolvido em C#, utilizando Windows Forms para a interface gráfica e MySQL para persistência dos dados. Sua estrutura contempla autenticação, cadastro e consulta de livros, cadastro de atiradores e registro de empréstimos e devoluções.</p>
-  <p>O escopo foi delimitado à biblioteca. Outros setores do Tiro de Guerra, como fardamento, materiais logísticos e armamento, não fazem parte da solução, pois envolvem informações institucionais de natureza distinta e requisitos específicos de segurança. A decisão mantém o projeto concentrado em uma demanda concreta e permite desenvolver uma ferramenta compatível com a dimensão da biblioteca.</p>
-  <div class="callout"><p><strong>Objetivo central:</strong> digitalizar o controle do acervo, facilitar a localização das obras, acompanhar a circulação dos exemplares e reduzir falhas associadas ao registro manual.</p></div>
-  <h3>Estado de desenvolvimento</h3>
-  <p>O projeto já possui uma aplicação desktop em desenvolvimento, com módulos de login, cadastro, consulta do acervo e registro de empréstimos e devoluções. O banco relacional foi modelado no MySQL Workbench, e o cadastro contempla a localização física dos livros por prateleira.</p>
-  <p>Como próximos passos, estão previstas a integração com Google Books e Open Library para consultar dados pelo ISBN, melhorias nos níveis de acesso e ampliação dos relatórios. Essas funcionalidades ainda são etapas futuras.</p>
+  <p class="lead">O Projeto Integrador consiste no desenvolvimento de um sistema desktop para organização e controle do acervo da biblioteca do Tiro de Guerra. A iniciativa surgiu de uma necessidade identificada junto aos responsáveis pela instituição: o registro de empréstimos e devoluções era realizado manualmente, por meio de anotações físicas, o que dificultava o acompanhamento dos materiais e aumentava a possibilidade de inconsistências e perda de informações.</p>
+  <p>A biblioteca reúne obras que apoiam os estudos e a formação dos integrantes do Tiro de Guerra. Nesse contexto, localizar um livro, identificar suas informações e acompanhar sua circulação são atividades que exigem registros organizados e acessíveis. A ausência de um sistema centralizado tornava essas tarefas mais demoradas e dependentes da conferência manual.</p>
+  <p>Para responder a essa necessidade, o grupo desenvolve uma aplicação que concentra os dados do acervo e as operações de circulação em um único ambiente. O sistema utiliza C# e Windows Forms na interface desktop e MySQL para armazenar as informações. Entre as funcionalidades implementadas estão o cadastro de livros e autores, o cadastro de atiradores, a pesquisa de obras, o registro de empréstimos, o processamento de devoluções e a consulta ao histórico.</p>
+  <p>O escopo está concentrado na biblioteca. Outros setores do Tiro de Guerra, como fardamento, materiais logísticos e armamento, não fazem parte da solução, pois possuem necessidades e requisitos próprios. A delimitação mantém o projeto direcionado a uma demanda concreta da instituição.</p>
+  <div class="callout"><p><strong>Objetivo central:</strong> informatizar o controle do acervo, facilitar a localização das obras, acompanhar a circulação dos livros e reduzir falhas associadas aos registros manuais.</p></div>
+  <h3>Funcionamento do sistema</h3>
+  <p>O cadastro de livros reúne informações como título, ano de publicação, autores, descrição e localização física por gaveta. Cada livro recebe um código no formato <span class="formula">LIV</span> seguido de três algarismos, utilizado para facilitar sua identificação e pesquisa.</p>
+  <p>No fluxo de empréstimo, o sistema permite pesquisar livros e atiradores, verificar as condições da operação e registrar o prazo de devolução. No processo de devolução, consulta os empréstimos em aberto, calcula eventual atraso e atualiza os registros relacionados. O histórico permite consultar as movimentações realizadas.</p>
   <h3>Equipe de desenvolvimento</h3>
   <ul class="team">
     <li>Caio de Azevedo Santichio</li>
@@ -93,74 +88,65 @@ section p{max-width:960px}
     <li>Gustavo Henrique Mariano da Silva</li>
     <li>Guilherme Maita Fernandes</li>
     <li>João Victor Casemiro de Lion</li>
-    <li>Carlos Nobuyasu</li>
   </ul>
 </section>
 
 <section id="estruturas">
   <div class="section-kicker">02 · Organização e eficiência dos dados</div>
   <h2>Estrutura de Dados</h2>
-  <p class="lead">A disciplina de Estrutura de Dados contribui para compreender como as informações podem ser organizadas, armazenadas, percorridas e recuperadas. No sistema da biblioteca, essa preocupação aparece no tratamento de livros, autores, usuários, exemplares e empréstimos, que precisam manter relações consistentes para que as operações administrativas funcionem corretamente.</p>
-  <p>A escolha de um banco de dados relacional MySQL estabelece a persistência das informações em tabelas relacionadas. Já na aplicação desenvolvida em C#, os registros podem ser representados por objetos e coleções em memória durante as operações realizadas pela interface. Essa combinação separa o armazenamento permanente dos dados da sua manipulação temporária pela aplicação.</p>
+  <p class="lead">Estruturas de Dados estuda formas de organizar, armazenar, percorrer e recuperar informações. No sistema da biblioteca, esses conceitos aparecem na manipulação de coleções em memória e na organização persistente dos registros em um banco de dados relacional.</p>
 
-  <h3>Estruturas lineares: organização de registros e movimentações</h3>
-  <p>O código utiliza coleções <span class="formula">List&lt;T&gt;</span> em C# para reunir autores, atiradores, empréstimos em aberto, registros do histórico e resultados de busca. Por serem dinâmicas, permitem adicionar, remover e percorrer elementos durante a execução.</p>
-  <p>Quando uma lista é percorrida para localizar ou filtrar um item, o custo no pior caso é <span class="formula">O(n)</span>, pois pode ser necessário verificar todos os elementos.</p>
-  <p>Uma fila também oferece um modelo útil para representar solicitações que devem ser atendidas na ordem de chegada. Caso o projeto implemente futuramente reservas de exemplares, por exemplo, uma fila de espera poderá organizar os interessados por ordem de solicitação. É importante destacar que essa é uma possibilidade de evolução: a documentação atual descreve empréstimos e devoluções, mas não confirma a implementação de uma fila de reservas.</p>
-  <p>Da mesma forma, uma pilha poderia apoiar um histórico de ações administrativas ou uma função de desfazer operações, permitindo recuperar a ação mais recente antes das anteriores. Esse recurso não integra o escopo funcional documentado, mas demonstra como uma estrutura linear pode ser aplicada a uma necessidade futura de auditoria e recuperação de operações.</p>
+  <h3>Listas dinâmicas na aplicação</h3>
+  <p>O código utiliza coleções <span class="formula">List&lt;T&gt;</span> em C# para reunir dados durante as operações da interface. Foram identificadas listas de autores no cadastro de livros, candidatos a atiradores e empréstimos em aberto na devolução, registros do histórico e resultados de pesquisa de livros.</p>
+  <p>Uma lista dinâmica permite adicionar elementos conforme a necessidade e percorrer seus registros. O acesso por índice possui custo típico <span class="formula">O(1)</span>; já uma busca sequencial ou a filtragem de todos os elementos pode exigir a verificação de até <span class="formula">n</span> itens, com custo <span class="formula">O(n)</span> no pior caso.</p>
 
-  <h3>Ordenação e busca: localização eficiente do acervo</h3>
-  <p>A consulta de livros por título, autor, categoria e disponibilidade é uma das funções centrais do sistema. A busca exige comparar os critérios informados pelo operador com os registros armazenados. Em uma coleção não ordenada, uma busca sequencial pode precisar verificar até <span class="formula">n</span> registros, resultando em complexidade linear <span class="formula">O(n)</span> no pior caso.</p>
-  <p>Quando os dados estão ordenados por uma chave compatível com a pesquisa, a busca binária pode reduzir o número de comparações para <span class="formula">O(log n)</span>. Entretanto, ela depende de uma coleção previamente ordenada e de acesso adequado aos elementos. Por isso, não se deve afirmar que a aplicação já utiliza busca binária: no projeto atual, a recuperação dos registros é realizada a partir da integração com o banco de dados, e a estratégia concreta depende das consultas SQL e dos índices definidos.</p>
-  <p>No sistema, a ordenação do histórico é realizada por meio de consultas SQL com <span class="formula">ORDER BY</span>, que solicita ao banco de dados a apresentação dos registros conforme um ou mais campos. Portanto, a organização dos resultados já faz parte do fluxo de consulta, mas não foi identificada no código analisado uma implementação própria de algoritmo de ordenação, como Merge Sort ou Quick Sort.</p>
-  <p>Essa distinção é relevante para a análise de complexidade: quando a ordenação é delegada ao banco de dados, o custo depende do plano de execução, dos índices disponíveis, do volume de registros e do mecanismo de armazenamento. A busca binária continua sendo um exemplo teórico útil para comparação, mas não deve ser atribuída à aplicação sem evidência de sua implementação.</p>
+  <h3>Busca, filtros e ordenação</h3>
+  <p>O sistema realiza pesquisas de livros, autores e atiradores por meio de consultas ao MySQL. No histórico de empréstimos e devoluções, os registros são apresentados em uma ordem definida na consulta SQL por meio de <span class="formula">ORDER BY</span>. Portanto, a ordenação observada é delegada ao banco de dados, e não a um algoritmo de ordenação implementado manualmente em C#.</p>
+  <p>A busca binária, que possui custo <span class="formula">O(log n)</span>, exige uma coleção previamente ordenada e condições adequadas de acesso aos elementos. Embora seja um conceito importante para comparar estratégias de busca, não foi identificada sua implementação no sistema. As consultas atuais são realizadas por SQL, e seu desempenho depende dos filtros utilizados, dos índices disponíveis e do plano de execução do banco.</p>
 
-  <h3>Estruturas avançadas: identificação e acesso aos registros</h3>
-  <p>Tabelas hash são estruturas que associam uma chave a um valor e permitem, em condições adequadas, acesso médio próximo de <span class="formula">O(1)</span>. No sistema, um identificador único para cada livro ou exemplar pode servir como referência para localizar um registro sem depender exclusivamente do título, que pode se repetir ou apresentar variações de escrita. O banco de dados relacional também pode garantir a unicidade desse identificador por meio de restrições apropriadas.</p>
-  <p>É importante diferenciar o conceito de tabela hash de uma tabela do MySQL: apesar do nome semelhante, são estruturas distintas. A tabela hash é uma estrutura de dados baseada em função de dispersão; a tabela relacional organiza registros em linhas e colunas. O projeto utiliza o MySQL como armazenamento persistente, e não há confirmação de que uma tabela hash tenha sido implementada diretamente na aplicação.</p>
-  <p>No MySQL/InnoDB, os índices são organizados em estruturas baseadas em B-tree. Chaves primárias e índices em campos pesquisados frequentemente ajudam a localizar registros, embora também tenham custo de manutenção em inserções e atualizações.</p>
-  <p>O identificador dos livros também contribui para a localização precisa dos registros. No sistema, o código segue o padrão <span class="formula">LIV</span> seguido de três algarismos, permitindo distinguir os livros por um código próprio em vez de depender somente do título, que pode se repetir. Esse identificador pode ser tratado como chave de pesquisa e, quando definido como único no banco, ajuda a preservar a integridade dos registros.</p>
-  <p>Embora tabelas hash possam oferecer acesso médio próximo de <span class="formula">O(1)</span> em cenários apropriados, não foi identificada uma implementação explícita de tabela hash no código analisado. Da mesma forma, filas e pilhas não devem ser apresentadas como estruturas já utilizadas: filas poderiam organizar futuras reservas por ordem de solicitação, e pilhas poderiam apoiar um histórico de ações com possibilidade de desfazer operações.</p>
+  <h3>Banco relacional e índices</h3>
+  <p>O MySQL organiza os dados em tabelas relacionadas, como livros, autores, categorias, atiradores, empréstimos e devoluções. A relação entre livros e autores é representada por uma tabela associativa, permitindo que uma obra tenha mais de um autor e que um autor esteja relacionado a diferentes obras.</p>
+  <p>As chaves primárias identificam registros, enquanto os índices auxiliam a localização de informações em consultas. O mecanismo InnoDB do MySQL utiliza estruturas de índices baseadas em B-tree. Esses índices são especialmente relevantes em consultas por campos indexados, embora sua manutenção também tenha custo durante inserções e atualizações.</p>
+  <p>O código de identificação <span class="formula">LIV</span> mais três algarismos facilita a referência a cada registro de livro. No cadastro, esse código é gerado pela aplicação com um valor aleatório de três dígitos. A unicidade deve ser garantida também pelo banco e tratada pela aplicação em caso de colisão; a geração aleatória, isoladamente, não garante que nunca haverá códigos repetidos.</p>
 
-  <div class="callout"><p><strong>Contribuição da disciplina:</strong> Estrutura de Dados permite avaliar que não basta armazenar informações: é necessário escolher formas adequadas de organizá-las e recuperá-las. No PI, esse raciocínio orienta a modelagem relacional, a representação dos registros na aplicação e a análise de desempenho das consultas do acervo.</p></div>
+  <div class="callout"><p><strong>Aplicação identificada no projeto:</strong> <span class="formula">List&lt;T&gt;</span>, consultas SQL, filtros de registros, ordenação com <span class="formula">ORDER BY</span>, chaves primárias e índices do MySQL/InnoDB. Não foram identificadas implementações próprias de pilhas, filas, listas encadeadas, tabelas hash, árvores de busca ou algoritmos como QuickSort, Bubble Sort e HeapSort.</p></div>
 </section>
 
 <section id="teoria">
-  <div class="section-kicker">03 · Linguagens formais, validação e custo computacional</div>
+  <div class="section-kicker">03 · Algoritmos, regras e análise computacional</div>
   <h2>Teoria da Computação</h2>
-  <p class="lead">A Teoria da Computação oferece modelos para compreender linguagens, reconhecer padrões, validar sequências de símbolos e analisar os limites de eficiência dos algoritmos. No sistema da biblioteca, esses conceitos se relacionam principalmente à validação dos dados inseridos, ao processamento das informações trocadas com serviços externos e à avaliação do custo das operações de busca e organização.</p>
+  <p class="lead">A Teoria da Computação oferece fundamentos para compreender algoritmos, regras de processamento e o custo computacional das operações. No sistema da biblioteca, a relação mais direta está nos procedimentos determinísticos que validam informações, executam empréstimos e devoluções e consultam os registros armazenados.</p>
 
-  <h3>Validação léxica e autômatos finitos</h3>
-  <p>O cadastro de livros recebe informações como título, autores, editora, ano de publicação, categoria e ISBN. Antes de persistir esses dados, a aplicação deve verificar se os valores respeitam formatos e regras esperadas. Expressões regulares permitem descrever padrões de caracteres, enquanto autômatos finitos determinísticos (AFD) oferecem um modelo formal para reconhecer cadeias que pertencem a uma linguagem regular.</p>
-  <p>Um exemplo diretamente relacionado ao projeto é o código de identificação dos livros, formado pelo prefixo <span class="formula">LIV</span> seguido de três algarismos. Esse padrão pode ser descrito pela expressão regular <span class="formula">^LIV[0-9]{3}$</span>. A expressão reconhece cadeias que começam com as letras LIV e terminam com exatamente três dígitos, sem caracteres adicionais.</p>
-  <p>O mesmo padrão pode ser representado conceitualmente por um Autômato Finito Determinístico (AFD): o autômato percorre os símbolos esperados — L, I, V e, em seguida, três dígitos —, avançando de estado a cada símbolo válido e aceitando a entrada somente ao final da sequência correta. Esse exemplo mostra como um conceito formal pode explicar uma regra concreta de identificação do acervo. A expressão e o AFD são apresentados como formalização do padrão; não se afirma que exista um autômato implementado no software.</p>
-  <p>Outras validações também são pertinentes ao cadastro, como verificar campos obrigatórios, ano composto por dígitos e formato do ISBN. Essas regras podem impedir que entradas malformadas avancem para a persistência, mas a validação sintática não comprova, por si só, que a obra existe ou que os dados bibliográficos estão corretos.</p>
-  <p>Essas verificações ajudam a impedir que entradas malformadas avancem para as etapas seguintes do cadastro. A validação de formato, porém, não comprova por si só que a obra existe ou que os dados bibliográficos estão corretos; ela apenas verifica se a entrada atende às regras definidas. A documentação do projeto descreve o cadastro manual e prevê integração futura com APIs, mas não especifica quais expressões regulares ou AFDs foram implementados. Assim, esse é um fundamento técnico aplicável e um ponto que pode ser formalizado na evolução do software.</p>
+  <h3>Algoritmos e regras de negócio</h3>
+  <p>As operações do sistema seguem sequências definidas de etapas. Para registrar um empréstimo, por exemplo, a aplicação pesquisa o livro e o atirador, verifica as condições necessárias e, quando os critérios são atendidos, registra a movimentação e seu prazo. Na devolução, recupera o empréstimo em aberto, valida as informações, calcula os dias de atraso quando aplicável e atualiza os registros.</p>
+  <p>Esses procedimentos são algoritmos: sequências finitas e ordenadas de instruções que recebem dados, executam operações e produzem resultados. As condições do sistema determinam quais caminhos serão seguidos conforme os dados e o estado da operação.</p>
 
-  <h3>Análise sintática e estruturas hierárquicas</h3>
-  <p>Na futura integração com Google Books e Open Library, o sistema poderá receber respostas em JSON, formato que organiza informações em objetos, propriedades e listas aninhadas.</p>
-  <p>Autômatos de pilha modelam linguagens que exigem acompanhar estruturas aninhadas, como o balanceamento de delimitadores. Na implementação, bibliotecas de JSON fazem a leitura e a conversão desses dados; não é necessário criar um autômato próprio.</p>
-  <p>Essa relação será importante quando forem integradas as APIs Google Books e Open Library, previstas para auxiliar o preenchimento dos dados bibliográficos a partir do ISBN. As respostas recebidas precisarão ser interpretadas antes de preencher os campos do cadastro. O processamento deverá considerar respostas incompletas, propriedades ausentes e tipos inesperados, evitando que uma falha na comunicação ou um dado inválido comprometa o registro. Como essa integração está planejada para uma etapa posterior, o processamento de JSON deve ser apresentado como aplicação futura dos conceitos, e não como recurso já concluído.</p>
+  <h3>Estados e transições do empréstimo</h3>
+  <p>O ciclo de circulação pode ser representado conceitualmente por estados como disponível, emprestado e devolvido. O registro de um empréstimo altera a situação do livro; a confirmação da devolução encerra a movimentação. A condição de atraso pode ser identificada pela comparação entre a data de vencimento e a data efetiva de devolução ou a data corrente.</p>
+  <p>Essa representação por estados ajuda a visualizar as regras de negócio e as transições permitidas. Ela descreve o comportamento funcional do sistema, sem significar que tenha sido implementado um autômato formal como AFD ou AFN.</p>
 
-  <h3>Complexidade, tratabilidade e análise de P versus NP</h3>
-  <p>A análise de complexidade permite estimar como o custo de um algoritmo cresce conforme aumenta a quantidade de registros. No sistema da biblioteca, operações como pesquisar livros, ordenar resultados, listar empréstimos e gerar relatórios precisam continuar eficientes mesmo quando o acervo e o histórico de movimentações aumentarem.</p>
-  <p>Uma busca sequencial em uma coleção <span class="formula">List&lt;T&gt;</span> pode exigir a verificação de até <span class="formula">n</span> elementos, com custo <span class="formula">O(n)</span> no pior caso. A busca binária pode alcançar <span class="formula">O(log n)</span>, desde que os dados estejam ordenados e a estrutura permita acesso apropriado. Algoritmos eficientes de ordenação por comparação costumam apresentar custo <span class="formula">O(n log n)</span>. No sistema, a ordenação do histórico utiliza <span class="formula">ORDER BY</span> no SQL, enquanto os índices do MySQL/InnoDB apoiam a recuperação de registros. O desempenho real depende do plano de execução, dos índices, da quantidade de dados transferidos e da implementação das consultas.</p>
-  <p>O problema central do PI não exige, em seu escopo atual, resolver um problema combinatório complexo de otimização, como roteamento de grande escala ou alocação de recursos com restrições numerosas. As operações previstas — cadastro, consulta, empréstimo, devolução e relatórios básicos — são tratadas por regras determinísticas, coleções e consultas ao banco de dados. A análise relevante é acompanhar como o custo dessas operações cresce com o número de livros e movimentações, além de considerar o efeito dos índices e da ordenação realizada pelo SGBD.</p>
-  <p>A discussão sobre P versus NP ajuda a reconhecer a diferença entre problemas que podem ser resolvidos eficientemente e problemas para os quais não se conhece algoritmo polinomial geral. Não é correto afirmar que o projeto resolve um problema NP-completo ou que precisa de heurísticas para seu funcionamento atual. Caso uma evolução futura inclua distribuição otimizada de exemplares, priorização de reservas com múltiplas restrições ou planejamento complexo de recursos, será necessário avaliar formalmente o problema antes de escolher uma estratégia exata ou aproximada.</p>
+  <h3>Complexidade das operações</h3>
+  <p>A análise de complexidade permite compreender como o custo de uma operação cresce conforme aumenta a quantidade de registros. Na aplicação, percorrer uma <span class="formula">List&lt;T&gt;</span> para filtrar ou localizar um elemento pode exigir a verificação de vários itens, caracterizando custo <span class="formula">O(n)</span> no pior caso. O acesso direto a uma posição da lista por índice possui custo típico <span class="formula">O(1)</span>.</p>
+  <p>As consultas ao banco de dados podem utilizar índices para evitar a leitura integral de uma tabela em determinadas condições. Entretanto, não é adequado atribuir uma complexidade exata a toda consulta SQL sem considerar o índice, o plano de execução, a seletividade dos filtros e o volume de dados. A ordenação com <span class="formula">ORDER BY</span> também é executada pelo SGBD.</p>
 
-  <div class="callout"><p><strong>Contribuição da disciplina:</strong> Teoria da Computação fornece uma base para definir regras de validação, compreender o processamento de dados estruturados e justificar escolhas algorítmicas por meio da complexidade. Isso contribui para que o sistema não apenas funcione, mas trate entradas de maneira consistente e mantenha desempenho adequado à dimensão do acervo.</p></div>
+  <h3>Limites do que é aplicado</h3>
+  <p>O escopo atual do sistema envolve cadastro, pesquisa, empréstimo, devolução e histórico. Essas funcionalidades não exigem a implementação de Máquina de Turing, autômatos com pilha, linguagens livres de contexto, problema da parada ou algoritmos para problemas NP-completos. Esses assuntos pertencem à fundamentação teórica da disciplina, mas não representam mecanismos utilizados pelo software.</p>
+  <p>Da mesma forma, não foram identificadas implementações explícitas de expressões regulares, AFD, AFN ou estruturas formais de reconhecimento de linguagens. O código de livro possui um formato definido — prefixo LIV seguido de três algarismos —, mas sua geração não equivale, por si só, à implementação de um autômato ou de um reconhecedor formal.</p>
+
+  <div class="callout"><p><strong>Aplicação identificada no projeto:</strong> algoritmos determinísticos para cadastro, pesquisa, empréstimo e devolução; regras condicionais de negócio; comparação de datas para identificar atrasos; e análise de complexidade de operações realizadas sobre listas e consultas ao banco de dados.</p></div>
 </section>
 
 <section id="consideracoes">
   <div class="section-kicker">04 · Síntese do aprendizado</div>
   <h2>Considerações finais</h2>
-  <p class="lead">O desenvolvimento do sistema para a biblioteca do Tiro de Guerra demonstra como conteúdos estudados em Engenharia de Computação podem ser aplicados na construção de uma solução para uma necessidade institucional concreta. A substituição dos registros manuais por uma aplicação integrada ao MySQL centraliza as informações, facilita a consulta do acervo e melhora o acompanhamento dos empréstimos e devoluções.</p>
-  <p>Estrutura de Dados contribui para compreender a organização dos registros, a representação das informações em memória e os diferentes custos envolvidos em operações de busca e ordenação. Teoria da Computação, por sua vez, oferece fundamentos para validar entradas, interpretar dados estruturados e analisar a eficiência dos algoritmos utilizados. As duas disciplinas se complementam: uma trata da organização e manipulação dos dados; a outra ajuda a compreender os padrões que esses dados devem respeitar e os limites computacionais das operações realizadas.</p>
-  <p>O projeto já evidencia aplicações concretas, como coleções <span class="formula">List&lt;T&gt;</span>, ordenação SQL com <span class="formula">ORDER BY</span> e índices do MySQL/InnoDB. O código <span class="formula">LIV</span> seguido de três dígitos permite demonstrar expressões regulares e AFD. A integração com APIs e o processamento de JSON são possibilidades de evolução.</p>
-  <p>Assim, o principal resultado do Projeto Integrador não se limita à criação de uma aplicação: consiste em transformar uma demanda real em uma solução planejada, modelada e desenvolvida com fundamentos de engenharia, conectando conhecimento acadêmico, análise de requisitos e aplicação prática.</p>
+  <p class="lead">O desenvolvimento do sistema para a biblioteca do Tiro de Guerra demonstra como conhecimentos da Engenharia de Computação podem ser aplicados a uma necessidade institucional concreta. A aplicação centraliza informações do acervo e apoia o acompanhamento dos empréstimos, devoluções e histórico de movimentações.</p>
+  <p>Em Estrutura de Dados, destacam-se o uso de coleções <span class="formula">List&lt;T&gt;</span>, a manipulação de registros em memória, as consultas SQL e os índices utilizados pelo MySQL. Esses elementos permitem discutir organização, recuperação de informações e complexidade das operações.</p>
+  <p>Em Teoria da Computação, a relação está na construção de algoritmos determinísticos, nas regras que controlam o fluxo das operações e na análise do custo computacional de buscas e filtros. Conceitos como autômatos, linguagens formais, Máquina de Turing e classes P e NP fazem parte do campo teórico, mas não foram incorporados como implementações do sistema.</p>
+  <p>Assim, o Projeto Integrador conecta uma demanda real à construção de uma solução computacional, utilizando estruturas de armazenamento, regras de processamento e análise de eficiência de acordo com as necessidades da biblioteca.</p>
   <p class="note">Projeto Integrador · Engenharia de Computação · 4º semestre · Campus Maria Auxiliadora · 2026</p>
 </section>
 </main>
+
 <footer>
   <p><strong>Projeto Integrador — Biblioteca do Tiro de Guerra</strong></p>
   <p>Desenvolvimento de sistema para organização e controle de acervo</p>
